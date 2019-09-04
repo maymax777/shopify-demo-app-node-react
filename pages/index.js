@@ -3,6 +3,8 @@ import { ChoiceList, EmptyState, Layout, Page, Button, Banner, Frame, Loading,
   Select, SkeletonThumbnail
   } from '@shopify/polaris';
 import store from 'store-js'
+
+/*
 const {
   USERNAME,
   PASSWORD,  
@@ -57,14 +59,14 @@ let scrape = async () => {
   closeBrowser(browser);  
   return result; // Return the data
 };
-
+*/
 class Index extends React.Component {
   constructor(props){
     super(props);
     
-    scrape().then((value) => {
-      console.log(value); // Success!
-    });
+    // scrape().then((value) => {
+    //   console.log(value); // Success!
+    // });
   }  
   state = {
     selected: 'today',
