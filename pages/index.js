@@ -3,7 +3,10 @@ import { ChoiceList, EmptyState, Layout, Page, Button, Banner, Frame, Loading,
   Select, SkeletonThumbnail
   } from '@shopify/polaris';
 import store from 'store-js'
-
+const {
+  USERNAME,
+  PASSWORD,  
+} = process.env;
 
 const puppeteer = require('puppeteer');
 const C = require('../data/constants');
@@ -33,9 +36,9 @@ let scrape = async () => {
   page.setViewport({width: 1366, height: 768});    
   await page.goto(C.loginUrl);  
   await page.click(USERNAME_SELECTOR);
-  await page.keyboard.type(C.username);
+  await page.keyboard.type(USERNAME);
   await page.click(PASSWORD_SELECTOR);
-  await page.keyboard.type(C.password);
+  await page.keyboard.type(PASSWORD);
   await page.click(CTA_SELECTOR);
   console.log('-- browser opened --');
   await page.goto(C.firstPageUrl, {waitUntil: 'domcontentloaded'});
